@@ -18,5 +18,5 @@ module.exports = function(controller) {
     controller.hears(['allcaps', new RegExp(/^[A-Z\s]+$/)], ['message','direct_message'], async function(bot, message) {
         await bot.reply(message,{ text: 'I HEARD ALL CAPS!' });
     });
-
+    
 }
