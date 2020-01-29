@@ -17,9 +17,14 @@ const { MongoDbStorage } = require('botbuilder-storage-mongodb');
 // Load process.env values from .env file
 require('dotenv').config();
 
-let storage = require('botkit-storage-redis')({
+let storage = null;
+if (process.env.MONGODB_URI) {
+    storage = mongoStorage = new MongoDbStorage({
+        url : process.env.MONGODB_URI,
+    });
+}
 
-})
+
 
 const adapter = new SlackAdapter({
     // REMOVE THIS OPTION AFTER YOU HAVE CONFIGURED YOUR APP!
