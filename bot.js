@@ -18,7 +18,7 @@ const { MongoDbStorage } = require('botbuilder-storage-mongodb');
 require('dotenv').config();
 
 let storage = require('botkit-storage-redis')({
-
+    url: process.env.REDISCLOUD_URL
 })
 
 const adapter = new SlackAdapter({
