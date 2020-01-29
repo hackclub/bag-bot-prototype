@@ -21,7 +21,8 @@ module.exports = function(controller) {
             match
         } = message
 
-        console.log(match)
+        console.log(message)
+        return
 
         const receiverSlackId = match[0]
         const itemQuantity = match[1] || '1'
